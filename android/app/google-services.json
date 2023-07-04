@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "969304746687",
+    "firebase_url": "https://bike-sharing-system-e73d9-default-rtdb.firebaseio.com",
+    "project_id": "bike-sharing-system-e73d9",
+    "storage_bucket": "bike-sharing-system-e73d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969304746687:android:6c4e6d9d9aa1935d6bf40a",
+        "android_client_info": {
+          "package_name": "com.bacha.usersapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969304746687-d8dg70s629rlm3ccpv3fem4eh1j8as3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpgf_BiOj9VjfIFJURFiFHz3EhTVOpoMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969304746687-d8dg70s629rlm3ccpv3fem4eh1j8as3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
