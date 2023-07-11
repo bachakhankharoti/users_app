@@ -21,10 +21,14 @@ class _MySlashScreenState extends State<MySlashScreen> {
       if (fAuth.currentUser != null) {
         var currentfirebaseuser = fAuth.currentUser;
         Navigator.push(
-            context, MaterialPageRoute(builder: (c) => MainScreen()));
+            context,
+            MaterialPageRoute(
+                builder: (c) => const LoginScreen())); // MainScreen
       } else {
         Navigator.push(
-            context, MaterialPageRoute(builder: (c) => LoginScreen()));
+            context,
+            MaterialPageRoute(
+                builder: (c) => const LoginScreen())); //LoginScreen
       }
     });
   }

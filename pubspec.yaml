@@ -52,12 +52,17 @@ dependencies:
   animated_text_kit: ^4.2.2
   intl_phone_field: ^3.1.0
   flutter_phone_direct_caller: ^2.1.1
+  local_auth: ^1.1.11
+  get: ^4.6.1
+  lottie: ^1.2.2
+  jazzcash_flutter: ^1.0.5
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^1.0.0
 
 flutter_icons:
   android: true

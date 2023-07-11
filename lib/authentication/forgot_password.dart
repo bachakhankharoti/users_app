@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -18,7 +17,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Forgot Password'),
+        title: const Text('Forgot Password'),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -40,16 +39,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             const SizedBox(height: 6),
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Email',
               ),
             ),
-            SizedBox(height: 16.0),
+           const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () async {
                 style:
                 ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 146, 231, 8),
+                  backgroundColor: Color.fromARGB(255, 8, 12, 231),
                   minimumSize: const Size(200, 50),
                 );
                 try {
@@ -62,9 +61,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       'An error occurred while resetting the password.');
                 }
               },
-              child: Text(
+              child:  Text(
                 'Reset Password',
-                style: TextStyle(
+                style:  TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

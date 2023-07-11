@@ -10,8 +10,11 @@ import 'package:users_app/authentication/forgot_password.dart';
 import 'package:users_app/authentication/signup.dart';
 import 'package:users_app/splashScreen/splash_screen.dart';
 //import '../global/global.dart';
+
 import '../global/global.dart';
+import '../mainScreens/main_screen.dart';
 import '../widgets/progress_dialog.dart';
+import 'fingerprint_scanner_ui.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -32,26 +35,42 @@ class _LoginScreenState extends State<LoginScreen> {
       Fluttertoast.showToast(msg: "Email Address is not valid.");
     } else if (_password.text.isEmpty) {
       Fluttertoast.showToast(msg: "Password must be required.");
+    } else if (_password.text != "correct_password") {
+      // Replace "correct_password" with the actual correct password
+      Fluttertoast.showToast(msg: "Wrong password entered.");
     } else {
       loginUserNow();
     }
   }
 
+  //without wrong pass msg is show
+/*
+  validateForm() {
+    if (!_email.text.contains("@")) {
+      Fluttertoast.showToast(msg: "Email Address is not valid.");
+    } else if (_password.text.isEmpty) {
+      Fluttertoast.showToast(msg: "Password must be required.");
+    } else if (_password.text.isEmpty) {
+      Fluttertoast.showToast(msg: "Password must be required.");
+    } 
+    else {
+      loginUserNow();
+    }
+  }
+*/
   loginUserNow() async {
-    showDialog(
+    /*  showDialog(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext c) {
         return ProgressDialog(message: "Processing, Please wait...");
       },
     );
-
-    var emailTextEditingController;
-    var passwordTextEditingController;
+*/
     final User? firebaseUser = (await fAuth
             .signInWithEmailAndPassword(
-      email: emailTextEditingController.text.trim(),
-      password: passwordTextEditingController.text.trim(),
+      email: _email.text.trim(),
+      password: _password.text.trim(),
     )
             .catchError((msg) {
       Navigator.pop(context);
@@ -69,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
           var currentfirebaseuser = firebaseUser;
           Fluttertoast.showToast(msg: "Login Successful.");
           Navigator.push(
-              context, MaterialPageRoute(builder: (c) => MySlashScreen()));
+              context, MaterialPageRoute(builder: (c) => MainScreen()));
         }
       });
     } else {
@@ -173,7 +192,29 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (c) => ForgotPasswordScreen()),
+                      MaterialPageRoute(
+                          builder: (c) => const FingerprintPage()),
+                    );
+                  },
+                  child: const Text(
+                    "login with fingerprint",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              // const SizedBox(height: 20),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (c) => const ForgotPasswordScreen()),
                     );
                   },
                   child: const Text(

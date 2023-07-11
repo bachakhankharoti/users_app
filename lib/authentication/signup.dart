@@ -277,6 +277,8 @@ import 'package:users_app/global/global.dart';
 import 'package:users_app/splashScreen/splash_screen.dart';
 import 'package:users_app/widgets/progress_dialog.dart';
 
+import '../mainScreens/main_screen.dart';
+
 class SignUpScreen extends StatefulWidget {
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
@@ -345,8 +347,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
         msg: "Account has been Created.",
         gravity: ToastGravity.TOP,
       );
-      // dynamic webPosition: "top")
-      Navigator.push(context, MaterialPageRoute(builder: (c) => LoginScreen()));
+
+      Navigator.push(
+          context, MaterialPageRoute(builder: (c) => const LoginScreen()));
     } else {
       Navigator.pop(context);
       Fluttertoast.showToast(
